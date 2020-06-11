@@ -1,0 +1,23 @@
+{
+  "name": "login-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "main.js",
+  "repository": "https://github.com/Trabalho-R-R/login-backend.git",
+  "author": "rodolphobarros@gmail.com <rodolphobarros@gmail.com>",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
