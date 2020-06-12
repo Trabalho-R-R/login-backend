@@ -1,7 +1,8 @@
-import { Schema, model } from 'mongoose';
+import { Schema } from 'mongoose';
+import mongoose from '../database'   
 import bcrypt from 'bcryptjs';
 
-const UserSchema = new Schema(
+const UserSchema = Schema(
 {
     name:{
         type: String,
@@ -23,12 +24,14 @@ const UserSchema = new Schema(
             default: Date.now,
     },
 });
+
 UserSchema.pre('save', async function(next) 
     {
         const hash = await bcrypt.hash(this.password, 10);
         this.password = hash;
         next();
-    }
-    ); 
-const User = model('User', UserSchema);
+    }); 
+
+const User = mongoose.model('User', UserSchema);
+
 export default User;
